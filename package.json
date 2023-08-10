@@ -1,0 +1,20 @@
+{
+  "name": "oestin_cw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumod1164/Oestin_CW.git"
+  },
+  "keywords": [],
+  "author": "Moin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kumod1164/Oestin_CW/issues"
+  },
+  "homepage": "https://github.com/kumod1164/Oestin_CW#readme"
+}

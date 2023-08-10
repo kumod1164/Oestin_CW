@@ -4,28 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Oestin_CW/styles/Roomlist.css">
+    
 </head>
 <body>
     <div id="roomlist">
 
-        <div id="headerbg"></div>
+        <div id="headerbg">
+            
+        </div>
+
+        <div id="sort">
+            <select name="Price" id="sortprice">
+                <option value="">Sort By Price</option>
+                <option value="Low to High"> Low to High</option>
+                <option value="High to Low">High to Low</option>
+            </select>
+            <select name="View" id="sortview">
+                <option value=""></option>
+            </select>
+        </div>
 
         <div id="rldetails">
 
             <div id="rlh">
                 <div id="rlheader">
                     <h3>OUR LUXURIOUS RETREAT ROOMS</h3>
-                    <p>Welcome to our luxurious retreat rooms, where comfort meets elegance. Each room is thoughtfully designed to ensure an unforgettable stay for our esteemed guests. Whether you're here for business or pleasure, our rooms offer a tranquil sanctuary, allowing you to unwind and rejuvenate amidst the breathtaking surroundings.</p>
+                    <p>Welcome to our luxurious retreat rooms, where comfort meets elegance. Each room is thoughtfully designed to ensure an unforgettable stay for our esteemed guests.</p>
                 </div>
             </div>
 
             <div id="roomrow">
-                <div id="room">
+                <!-- <div id="room">
                     <div id="roomimg">
-                        <img src="https://th.bing.com/th?id=OIP.Q2KGeED36DurIX1XlhD2_QHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Single Room"><a href="https://www.tajhotels.com/en-in/destination/hotels-in-mumbai/"></a>
+                        <a href=""><img src="https://th.bing.com/th?id=OIP.Q2KGeED36DurIX1XlhD2_QHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Single Room"></a>
                     </div>
-                    <div></div>
-                </div>
+                    <div id="rdescription">
+                        <div id="roomname">
+                            <h2>Single room</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam rerum vero voluptatum dolores ratione ea temporibus assumenda praesentium quae obcaecati veritatis tempore, voluptatem reiciendis reprehenderit magni maiores laudantium cumque accusamus!</p>
+                        </div>
+                        
+                        <div id="price">
+                            <h2>&#8377; 15,000 *</h2>
+                            <p> Starting Rate/ Per Night</p>
+                        </div>
+
+                        <div id="features">
+                            <div id="area">
+                                <img src="https://www.tajhotels.com/content/dam/tajhotels/icons/room-property/area.png" alt="area">
+                                
+                                <span>50 Sq Meter</span>
+                            </div>
+                            <div id="bedtype">
+                                <img src="https://www.tajhotels.com/content/dam/tajhotels/icons/room-property/bedType.png" alt="bed">
+                                <span>King Bed</span>
+                            </div>
+                            <div id="view">
+                                <img src="https://promos.makemytrip.com/Hotels_product/Hotel_SR/Android/drawable-hdpi/view.png" alt="View">
+                                <span>City View</span>
+                            </div>
+                            <div id="wifi">
+                                <img src="https://www.tajhotels.com/content/dam/tajhotels/icons/room-property/wifi.png" alt="Wifi">
+                                <span>Inclusive Wifi</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div> -->
+
+                
             </div>
         </div>
 
@@ -33,3 +83,6 @@
     
 </body>
 </html>
+<script src="/Oestin_CW/scripts/Roomlist.js">
+
+</script>
