@@ -1,30 +1,75 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
     <title>Signin</title>
     <style>
+
+.bg {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 300% 300%;
+  background-image: linear-gradient(-45deg, yellow 0%, yellow 25%, yellow 51%, #ff357f 100%);
+  -webkit-animation: AnimateBG 20s ease infinite;
+          animation: AnimateBG 20s ease infinite;
+}
+
+@-webkit-keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         /* CSS for the registration form */
 
-body {
+        body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
   margin: 0;
   padding: 0;
+  
+  background: url('https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
+            background-size: cover;
+            /* filter: blur(8px); */
+            
 }
-
 #registration_form {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 180px 0 0 540px ;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #b5876d;
+  /* border-radius: 8px; */
+  box-shadow:0 0 10px #ffe168;
 }
 
 #registration_form div {
   margin-bottom: 10px;
+  background-color: #b5876d;
 }
 
 label {
@@ -33,6 +78,12 @@ label {
   margin-bottom: 5px;
 }
 
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 input[type="text"] {
   width: 100%;
   padding: 10px;
@@ -52,7 +103,7 @@ button {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #ffcc00;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -60,28 +111,119 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #ff9900;
 }
+#pass1  {
+  display: flex;
+  align-items: center;
+  border: 0;
+  /* border: 1px solid; */
+}
+#eyeicon {
+  
+  opacity: 50%;
+  margin-left: -32px;
+  
+}
+#eyeicon:hover {
+  opacity: 90%;
+  cursor: pointer;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border-color: #F3E5AB;
+  box-shadow: 0 0 10px #F3E5AB;
+}
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=password]:focus {
+  border-color: #F3E5AB;
+  box-shadow: 0 0 10px #F3E5AB;
+}
+
+.error-message {
+  font-size: 10px;
+  color: red;
+}
+.error-form {
+    animation: ShadowError 5s ease-in-out; /* Change animation duration and easing as needed */
+}
+
+@keyframes ShadowError {
+    0%, 100% {
+        box-shadow: 0 0 10px #ffe168;
+    }
+    15%, 85% {
+        box-shadow: 0 0 20px #ff0000; /* Change this color to your desired error color */
+    }
+}
+@keyframes borderError {
+    0%, 100% {
+      box-shadow: 0 0 10px #ffc6c6; /* Original border color */
+    }
+    15%, 85%{
+        box-shadow: 0 0 10px #ff0000; /* Change this color to your desired error color */
+    }
+}
+
+.error-field {
+    animation: borderError 10s ease-in-out; /* Adjust duration and easing as needed */
+}
+
 
     </style>
 </head>
 <body>
-    <div>
-        <button id="logout" style="display: none;"></button>
-    </div>
+    
     <form action="" id="registration_form">
-        <div>
-            <div>
-                <label for="">Email</label>
-                <input type="text" placeholder="Email" id="login_email">
-            </div>
+        
+
+          <div>
+            <label for="">Email</label>
+            <input type="text" placeholder="Enter Your Name" id="login_email">
+            <div id="emailMessage" class="error-message"></div>
+        </div>
+        <div id="pass">
             <div>
                 <label for="">Password</label>
-                <input type="text" placeholder="Password" id="login_password">
-                <button type="button" id="login">Login</button>
+                <div id="pass1">
+                    <input type="password" placeholder="Enter Your Password" id="login_password">
+                    <i class="fa-solid fa-eye" id="eyeicon"></i>
+                </div>
+                <div id="passwordMessage" class="error-message"></div>
+                <button type="button" id="login" style="display: block;" onclick="this.style.display='none'">Login</button>
+                <div id="loginSuccessMessage" class="success-message"></div>
+
+            </div>
+            <div>
+                <button id="logout" style="display: none;">Logout</button>
             </div>
         </div>
+        
+        
     </form>
+    <a href="./signup.html">Signup</a>
+
 </body>
 </html>
 <script type="module">
@@ -89,13 +231,30 @@ button:hover {
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
 
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+    import { getAuth, signInWithEmailAndPassword,signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
-  
+
+
+    
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+    //Eye icon
+    let eyeicon = document.getElementById("eyeicon");
+      let password = document.getElementById("login_password");
+
+      eyeicon.onclick = function(){
+        if (password.type == "password") {
+          password.type = "text";
+        } else {
+          password.type = "password";
+        }
+      }
+      
+
+      // Firebase Authentication
     const firebaseConfig = {
       apiKey: "AIzaSyBinM_1aYRB7P38tzdSpNIbvuagzHcxYwg",
       authDomain: "unit5-72828.firebaseapp.com",
@@ -113,27 +272,85 @@ button:hover {
     console.log(app);
     const auth = getAuth();
 
-    document.getElementById("login").addEventListener("click",function(event){
-        event.preventDefault();
-        let email= document.getElementById("login_email").value;
-        let password = document.getElementById("login_password").value;
+    // ================
+    document.getElementById("login").addEventListener("click", function(event) {
+    event.preventDefault();
+    let email = document.getElementById("login_email").value;
+    let password = document.getElementById("login_password").value;
 
-        signInWithEmailAndPassword(auth, email, password)
+    // Clear previous messages and styling
+    document.getElementById("emailMessage").textContent = "";
+    document.getElementById("passwordMessage").textContent = "";
+    document.getElementById("loginSuccessMessage").textContent = "";
+    document.getElementById("login_email").classList.remove("error-field");
+    document.getElementById("login_password").classList.remove("error-field");
+
+    signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-    // Signed in 
-        const user = userCredential.user;
-        console.log(user);
-        alert("You are logged in")
-    // ...
-    })
+            const user = userCredential.user;
+            console.log(user);
+            document.getElementById("logout").style.display = "block";
+            document.getElementById("loginSuccessMessage").textContent = "Login successful!";
+        })
         .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage);
-        alert(`${errorMessage}`);
-    });
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage);
+
+            // Display error messages and apply error styles with animation to input fields
+            if (errorCode === "auth/invalid-email" || errorCode === "auth/user-not-found") {
+                document.getElementById("emailMessage").textContent = errorMessage;
+                document.getElementById("login_email").classList.add("error-field");
+                document.getElementById("login_email").classList.add("error-field");
+            } else if (errorCode === "auth/wrong-password") {
+                document.getElementById("passwordMessage").textContent = errorMessage;
+                document.getElementById("login_password").classList.add("error-field");
+                document.getElementById("login_password").classList.add("error-field");
+            }
+        });
+});
+
+document.getElementById("login_email").addEventListener("focus", function() {
+    this.classList.remove("error-field");
+});
+
+document.getElementById("login_password").addEventListener("focus", function() {
+    this.classList.remove("error-field");
+});
+
+
+    // ====================
+
+    document.getElementById("logout").addEventListener("click", function(){
         
+        signOut(auth)
+        .then(() => {
+        // Sign-out successful.
+        alert("logout successfully")
+        location.href= "./signup.html"
+
+        }).catch((error) => {
+        // An error happened.
+        });
+    
     })
+
+    login.onclick = function(){
+      if (alert === "logout successfully") {
+        password.type = "text";
+      } else {
+        password.type = "password";
+      }
+    }
+
+
+
 
     
+
   </script>
+
+
+
+
+

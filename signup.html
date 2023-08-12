@@ -1,10 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>Signup</title>
     <style>
+
+      
         /* CSS for the registration form */
 
 body {
@@ -12,19 +17,31 @@ body {
   background-color: #f5f5f5;
   margin: 0;
   padding: 0;
+  
+  background: url('https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
+            background-size: cover;
+            /* filter: blur(8px); */
 }
 
 #registration_form {
+ 
+  border-color: #F3E5AB;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 162px 0 0 540px ;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #b5876d;
+  /* border-radius: 8px; */
+  box-shadow: 0 0 10px #ffe168;
+}
+
+#registration_form:focus {
+  border-color: #ff3b97;
+  
 }
 
 #registration_form div {
   margin-bottom: 10px;
+  background-color: #b5876d;
 }
 
 label {
@@ -33,6 +50,12 @@ label {
   margin-bottom: 5px;
 }
 
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 input[type="text"] {
   width: 100%;
   padding: 10px;
@@ -52,7 +75,7 @@ button {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #ffcc00;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -60,32 +83,120 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #ff9900;
 }
+.pass1  {
+  display: flex;
+  align-items: center;
+  border: 0;
+  /* border: 1px solid; */
+}
+.pass2  {
+  display: flex;
+  align-items: center;
+  border: 0;
+  /* border: 1px solid; */
+}
+#eyeicon {
+  opacity: 50%;
+  margin-left: -32px;
+  width: 5%;
+}
+#eyeicon:hover {
+  opacity: 90%;
+  cursor: pointer;
+}
+
+#confirmEyeIcon {
+  opacity: 50%;
+  margin-left: -32px;
+  width: 5%;
+}
+#confirmEyeIcon:hover {
+  opacity: 90%;
+  cursor: pointer;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border-color: #F3E5AB;
+  box-shadow: 0 0 10px #F3E5AB;
+}
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=password]:focus {
+  border-color: #F3E5AB;
+  box-shadow: 0 0 10px #F3E5AB;
+}
+
+@keyframes borderAnimation {
+  0%, 100% {
+    border-color: #F3E5AB;
+  }
+  50% {
+    border-color: red;
+  }
+}
+
 
     </style>
 </head>
 <body>
-    <div>
-        <button id="logout" style="display: none;"></button>
-    </div>
-    <form action="" id="registration_form">
+  <div class="bg-image">
+    <img src="" alt="">
+  </div>
+  <form action="" id="registration_form" class="error-animation">
+
         <div>
             <div>
                 <label for=""UserName>UserName</label>
-                <input type="text" placeholder="Name" id="name">
+                <input type="text" placeholder="Enter Your Name" id="name">
             </div>
-            <div>
-                <label for="">Email</label>
-                <input type="text" placeholder="Email" id="email">
+              <label for="">Email</label>
+              <div>  
+                <input type="text" placeholder="Enter Your Email" id="email">
             </div>
+            
             <div>
-                <label for="">Password</label>
-                <input type="text" placeholder="Password" id="password">
-                <button type="button" id="register">Signup</button>
+              <label for="">Password</label>
+              <div class="pass1">
+                <input type="password" placeholder="Enter Your Password" id="password">
+                <i class="fa-solid fa-eye" id="eyeicon"></i>
+              </div>
+              
+
+              <div>
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="pass2">
+                    <input type="password" placeholder="Confirm Your Password" id="confirmPassword">
+                    <i class="fa-solid fa-eye" id="confirmEyeIcon"></i>
+                </div>
+            </div>
+            
+              <button type="button" id="register">Signup</button>
             </div>
         </div>
     </form>
+    <a href="./signin.html">Signin</a>
 </body>
 </html>
 <script type="module">
@@ -98,6 +209,52 @@ button:hover {
     import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+    // Eye icon
+    let eyeicon = document.getElementById("eyeicon");
+      let password = document.getElementById("password");
+
+      eyeicon.onclick = function(){
+        if (password.type == "password") {
+          password.type = "text";
+        } else {
+          password.type = "password";
+        }
+      }
+
+      
+      // Eye icon for confirm password
+      let confirmEyeIcon = document.getElementById("confirmEyeIcon");
+      let confirmPassword = document.getElementById("confirmPassword");
+
+      confirmEyeIcon.onclick = function () {
+        if (confirmPassword.type === "password") {
+          confirmPassword.type = "text";
+        } else {
+          confirmPassword.type = "password";
+        }
+      };
+    
+      
+      // Password check
+      function isStrongPassword(password) {
+      // Define your password strength rules here
+        const minLength = 8;
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasNumbers = /[0-9]/.test(password);
+        const hasSpecialChars = /[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/.test(password);
+
+      return (
+        password.length >= minLength &&
+        hasUpperCase &&
+        hasLowerCase &&
+        hasNumbers &&
+        hasSpecialChars
+      );
+      }
+
+           // Firebase Authenticaiton
     const firebaseConfig = {
       apiKey: "AIzaSyBinM_1aYRB7P38tzdSpNIbvuagzHcxYwg",
       authDomain: "unit5-72828.firebaseapp.com",
@@ -107,37 +264,48 @@ button:hover {
       appId: "1:316580438171:web:d519fe2a395505f50de63e",
       measurementId: "G-GD2W6CCBJQ"
     };
-    // Initialize Firebase
+
     const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    console.log(app);
-    const auth = getAuth();
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
 
-    document.getElementById("register").addEventListener("click",function(event){
-        event.preventDefault();
-        let email= document.getElementById("email").value;
-        let password = document.getElementById("password").value;
-        let userName = document.getElementById("name").value;
+        document.getElementById("register").addEventListener("click", function (event) {
+    event.preventDefault();
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    let userName = document.getElementById("name").value;
 
-        createUserWithEmailAndPassword(auth, email, password)
+    // Check if passwords match
+    if (password !== confirmPassword) {
+        alert("Passwords do not match. Please confirm your password.");
+        document.getElementById("registration_form").classList.add("error-animation");
+        return;
+    }
+
+    // Check if password is strong
+    if (!isStrongPassword(password)) {
+        alert("Password is not strong enough. Please use a stronger password.");
+        document.getElementById("registration_form").classList.add("error-animation");
+        return;
+    }
+
+    // Remove animation class if no error
+    document.getElementById("registration_form").classList.remove("error-animation");
+
+    createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-    // Signed in 
+            // Signed in
             const user = userCredential.user;
             console.log(user);
-            alert("registered successfully")
-    })
+            alert("Registered successfully");
+        })
+        .catch((error) => {
+            alert("Error: " + error.message);
+            console.log(error.message);
+        });
+});
 
-    .catch((error) => {
-        alert(`${"error"}`);
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(errorMessage);
-    
-    // ..
-    // ...
-    });
-    
-    });
 
     document.getElementById("logout").addEventListener("click", function() {
 
@@ -152,4 +320,6 @@ button:hover {
         });
 
     });
+
+
   </script>
