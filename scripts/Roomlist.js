@@ -2,7 +2,42 @@
 async function fetching(){
     
     
-    let res = await fetch("http://localhost:3000/rooms")
+    let res = await fetch("http://localhost:3000/rooms?_page=1&_limit=4")
+    let result=await res.json();
+    // console.log(result);
+    
+    try{
+        // console.log(result);
+        appenddata(result);
+        // return result;
+    }catch(error){
+        return error
+    }
+    
+}
+fetching();
+// console.log("Moin")
+// console.log(data)
+
+
+
+//Sort by Price
+
+
+let sp=document.getElementById("sortprice")
+sp.addEventListener("change",function(){
+    sortcart();
+})
+async function sortcart(){
+    let res;
+    if(sp.value=="Low to High"){
+        res = await fetch(`http://localhost:3000/rooms?_sort=price&_order=asc&_page=1&_limit=4`)
+        
+    }else if(sp.value=="High to Low"){
+        res = await fetch(`http://localhost:3000/rooms?_sort=price&_order=desc&_page=1&_limit=4`)
+    }
+    
+    
     let result=await res.json();
     // console.log(result);
     
@@ -15,10 +50,71 @@ async function fetching(){
     }
     
 }
-let d =fetching();
-// console.log("Moin")
-// console.log(data)
 
+
+//filter by View
+
+let sv=document.getElementById("sortview")
+sv.addEventListener("change",function(){
+    sortview();
+})
+async function sortview(){
+    let res;
+    if(sv.value=="Ocean View"){
+        res = await fetch(`http://localhost:3000/rooms?view=Ocean`)
+        console.log(res)
+    }else if(sv.value=="City View"){
+        res = await fetch(`http://localhost:3000/rooms?view=City`)
+    }
+    
+    
+    let result=await res.json();
+    // console.log(result);
+    
+    try{
+        // console.log(result);
+        appenddata(result);
+        return result;
+    }catch(error){
+        return error
+    }
+    
+}
+
+
+//filter by BetType
+
+let fb=document.getElementById("sortbedtype")
+fb.addEventListener("change",function(){
+    filterbed();
+})
+async function filterbed(){
+    let res;
+    if(fb.value=="Single bed"){
+        res = await fetch(`http://localhost:3000/rooms?bed=Single`)
+        // console.log(res)
+    }else if(fb.value=="Double bed"){
+        res = await fetch(`http://localhost:3000/rooms?bed=Double`)
+    }else if(fb.value=="King bed"){
+        res = await fetch(`http://localhost:3000/rooms?bed=King`)
+    }
+    
+    
+    let result=await res.json();
+    // console.log(result);
+    
+    try{
+        // console.log(result);
+        appenddata(result);
+        return result;
+    }catch(error){
+        return error
+    }
+    
+}
+
+
+//Append
 
 function appenddata(data){
     let roomrow=document.getElementById("roomrow")
@@ -96,7 +192,10 @@ function appenddata(data){
         let bts=document.createElement("span");
         bts.innerText=e.bed;
 
-        bt.append(btimg,bts);
+        let btstype=document.createElement("span");
+        btstype.innerText="Bed";
+
+        bt.append(btimg,bts,btstype);
 
         let v=document.createElement("div")
         v.setAttribute("id","view");
@@ -107,7 +206,10 @@ function appenddata(data){
         let vs=document.createElement("span");
         vs.innerText=e.view;
 
-        v.append(vimg,vs);
+        let vsview=document.createElement("span");
+        vsview.innerText="View";
+
+        v.append(vimg,vs,vsview);
 
         let w=document.createElement("div")
         w.setAttribute("id","view");
@@ -117,6 +219,11 @@ function appenddata(data){
 
         let ws=document.createElement("span");
         ws.innerText="Inclusive Wifi";
+        
+        // let butt=document.createElement("button");
+        // butt.setAttribute("id","detailbutt");
+        // butt.innerText="Details"
+
 
         w.append(wimg,ws);
 
@@ -126,13 +233,31 @@ function appenddata(data){
         room.append(roomimg,rdescription);
         roomrow.append(room)
 
+        
+        
+
     })
 
-    let rooma=document.getElementById("room")
-    rooma.addEventListener("click",function(){
-        // console.log("Moin")
-        location.href="https://www.tajhotels.com/en-in/taj/taj-mahal-palace-mumbai/rooms-and-suites/?room-name=Luxury%20Grande%20Room%20City%20View"
-    })
+    let rooma=document.querySelectorAll("#room")
+    for(let i of rooma){
 
+        i.addEventListener("click",function(){
+                // console.log("Moin")
+            location.href="../html/Roomdetails.html"
+        })
+
+    }
+
+    
+
+    let pagecartnumbers=data.length;
+
+    let no_of_pages= Math.ceil(pagecartnumbers/5);
+
+    for(let i=1;i<=no_of_pages;i++){
+        let pageno=document.createElement("a")
+        pageno.
+    }
 
 }
+

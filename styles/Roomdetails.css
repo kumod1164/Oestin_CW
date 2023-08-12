@@ -1,0 +1,30 @@
+#headerbg{
+    position: relative;
+    text-align: center;
+
+}
+#headerbg >img{
+    width: 100%;
+}
+
+#imgtext{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 00;
+  font-size: 25px;
+  
+
+}
+
+#headerlink{
+    /* width: 20%; */
+position: absolute;
+  bottom: 25px;
+  left: 16px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+}

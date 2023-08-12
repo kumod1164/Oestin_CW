@@ -1,3 +1,58 @@
+/* #roomlist{
+    position: relative;
+} */
+
+#headerbg{
+    position: relative;
+    text-align: center;
+
+}
+#headerbg >img{
+    width: 100%;
+}
+
+#imgtext{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  /* font-weight: 600;
+  font-size: 25px; */
+  width: 50%;
+  
+}
+
+#imgtext >h2{
+    font-weight: 700;
+    font-size: 35px;
+}
+
+#headerlink{
+    /* width: 20%; */
+position: absolute;
+  bottom: 25px;
+  left: 16px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+}
+/* #headerlink >a{
+    text-size-adjust: 50px;
+    font-weight: ;
+    background-color: blueviolet;
+} */
+
+#sort{
+    margin: 30px;
+}
+select{
+    border-radius: 10px;
+    margin-left: 20px;
+}
+#rlh{
+margin: 30px;
+}
 #rldetails{
     width: 80%;
     /* background-color: rgb(128, 160, 140); */
@@ -49,6 +104,7 @@ margin: auto ;
 } */
 #price >h2{
     margin: 0;
+    color: #d29751;
 }
 
 #features{
@@ -65,4 +121,53 @@ margin: auto ;
     margin: 0px 5px;
 }
 
+/* #detailbutt{
+    /* border-radius: 1px solid black; */
+    background-color:#b5876d;
+} */
 
+@media only screen and (min-width: 481px) and (max-width: 1000px) {
+ #roomimg{
+    width: 100%;
+  }
+  #room{
+    display: flex;
+    flex-direction: column;
+    padding:0;
+    width: 70%;
+    margin: auto;
+    
+
+  }
+
+   #rdescription{
+    width: 100%;
+  }
+  
+}
+  @media (max-width: 480px) {
+  #features{
+    display: flex;
+    flex-direction: column;
+  }
+    
+  #room{
+    display: flex;
+    flex-direction: column;
+    padding:0;
+
+  }
+
+  #rdescription{
+    width: 100%;
+  }
+
+  #roomimg{
+    width: auto;
+  }
+
+
+  }
+  
+
+  

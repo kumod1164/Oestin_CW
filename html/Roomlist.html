@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Room-List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Oestin_CW/styles/Roomlist.css">
     
@@ -12,7 +12,17 @@
     <div id="roomlist">
 
         <div id="headerbg">
-            
+            <img src="https://htmldemo.net/oestin/oestin/img/bg/3.jpg" alt="">
+            <div id="imgtext">
+                <h2>Room-List View</h2>
+                <p>A quality room of Oestin with sea or mountain view</p>
+            </div>
+
+            <div id="headerlink">
+                <a href="#" style="text-decoration: none; color: #fff;" >Home //</a>
+                <a href="#" style="text-decoration: none; color: #82523c;">Room-List View</a>
+            </div>
+
         </div>
 
         <div id="sort">
@@ -21,9 +31,19 @@
                 <option value="Low to High"> Low to High</option>
                 <option value="High to Low">High to Low</option>
             </select>
+
             <select name="View" id="sortview">
-                <option value=""></option>
+                <option value="">Sort By View</option>
+                <option value="Ocean View">Ocean View</option>
+                <option value="City View">City View</option>
             </select>
+            <select name="Bed" id="sortbedtype">
+                <option value="">Sort By BedType</option>
+                <option value="Single bed">Single Bed</option>
+                <option value="Double bed"> Double Bed</option>
+                <option value="King bed"> King Bed</option>
+            </select>
+
         </div>
 
         <div id="rldetails">
@@ -75,6 +95,10 @@
                     </div>
                 </div> -->
 
+                
+            </div>
+
+            <div id="pagination"> 
                 
             </div>
         </div>
