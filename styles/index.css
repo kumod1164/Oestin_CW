@@ -1,0 +1,83 @@
+
+
+/* SLIDER SECTION */
+
+/* #content{
+    padding: 332px 600px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 888;
+    position: absolute;
+    background-color: rgba(51, 50, 50, 0.5);
+    color: white;
+    border: 1px solid black;
+}
+#content > h1{
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-top: 40px;
+}
+#content > div > div > button{
+    border: 1px solid black;
+    padding: 15px;
+    width: 150px;
+    font-size: 1em;
+    background-color: white;
+    color: #b5876d;
+} */
+
+#content{
+    position: absolute;
+    right: 10;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding-top: 20%;
+    padding-bottom: 15%;
+    width: 99.2%;
+    background-color: rgba(51, 50, 50, 0.5);
+    color: white;
+}
+#content > div > i{
+    color: black;
+    background-color: white;
+    font-size: 2rem;
+    padding: 30%;
+}
+#content > div > i:hover{
+    background-color: #b5876d;
+    color: white;
+}
+#content > div:nth-child(2){
+    text-align: center;
+    width: 50%;
+}
+#content > div:nth-child(2) h1{
+    font-size: 4rem;
+}
+#content > div:nth-child(2) button{
+    padding: 1% 4%;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #b5876d;
+    background-color: none;
+    border: none;
+    /* position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    background-color: none;
+    /* background-color: rgba(51, 50, 50, 0.327); */
+}
+#content > div:nth-child(2) button:hover{
+    top: 0;
+    height: 100%;
+    background-color: #b5876d;
+    color: white;
+}
+.hide{
+    /* visibility: hidden; */
+}
