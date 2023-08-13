@@ -250,14 +250,14 @@ function appenddata(data){
 
     
 
-    let pagecartnumbers=data.length;
+    // let pagecartnumbers=data.length;
 
-    let no_of_pages= Math.ceil(pagecartnumbers/5);
+    // let no_of_pages= Math.ceil(pagecartnumbers/5);
 
-    for(let i=1;i<=no_of_pages;i++){
-        let pageno=document.createElement("a")
-        pageno.
-    }
+    // for(let i=1;i<=no_of_pages;i++){
+    //     let pageno=document.createElement("a")
+    //     pageno.s
+    // }
 
 }
 
