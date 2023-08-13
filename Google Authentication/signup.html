@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg-image">
+        <img src="" alt="">
+      </div>
+      <form action="" id="registration_form" class="error-animation">
+          <div>
+            <button id="logout" style="display: none;">logout</button>
+          </div>
+          <button type="button" id="register">Google</button>
+    
+      </form>
+        <a href="./signin.html">Signin</a>
+</body>
+</html>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+
+  import { GoogleAuthProvider ,getAuth, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyBinM_1aYRB7P38tzdSpNIbvuagzHcxYwg",
+    authDomain: "unit5-72828.firebaseapp.com",
+    projectId: "unit5-72828",
+    storageBucket: "unit5-72828.appspot.com",
+    messagingSenderId: "316580438171",
+    appId: "1:316580438171:web:d519fe2a395505f50de63e",
+    measurementId: "G-GD2W6CCBJQ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+  console.log(app);
+
+
+  const provider = new GoogleAuthProvider();
+
+  const auth = getAuth();
+
+
+    document.getElementById("register").addEventListener("click", function (){
+      signInWithPopup(auth, provider)
+        .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+    // The signed-in user info.
+          const user = result.user;
+          console.log(user);
+          document.getElementById("logout").style.display="block";
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+        }).catch((error) => {
+    // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+    // The email of the user's account used.
+          const email = error.customData.email;
+    // The AuthCredential type that was used.
+          const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+        });
+    })
+
+</script>
