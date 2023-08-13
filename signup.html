@@ -157,6 +157,35 @@ input[type=password]:focus {
   }
 }
 
+.error-message {
+        font-size: small;
+        color: red;
+        margin-top: 5px;
+    }
+
+    /* Add this to your existing CSS styles */
+
+.success-message {
+    font-size: 14px; /* Adjust the font size as needed */
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+}
+/* Add this to your existing CSS styles */
+
+.success-message {
+    font-size: 14px; /* Adjust the font size as needed */
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Add a smooth transition */
+}
+
+.success-message.fade-out {
+    opacity: 0;
+}
+
 
     </style>
 </head>
@@ -167,34 +196,45 @@ input[type=password]:focus {
   <form action="" id="registration_form" class="error-animation">
 
         <div>
-            <div>
-                <label for=""UserName>UserName</label>
-                <input type="text" placeholder="Enter Your Name" id="name">
-            </div>
-              <label for="">Email</label>
-              <div>  
-                <input type="text" placeholder="Enter Your Email" id="email">
-            </div>
-            
-            <div>
-              <label for="">Password</label>
-              <div class="pass1">
-                <input type="password" placeholder="Enter Your Password" id="password">
-                <i class="fa-solid fa-eye" id="eyeicon"></i>
-              </div>
-              
+            <!-- Update the error message elements -->
+          <div>
+            <label for="userName">UserName</label>
+            <input type="text" placeholder="Enter Your Name" id="name">
+          </div>
 
-              <div>
-                <label for="confirmPassword">Confirm Password</label>
-                <div class="pass2">
-                    <input type="password" placeholder="Confirm Your Password" id="confirmPassword">
-                    <i class="fa-solid fa-eye" id="confirmEyeIcon"></i>
-                </div>
-            </div>
+          <p class="error-message" id="name-error"></p>
+            <label for="email">Email</label>
+
+          <div>
+            <input type="text" placeholder="Enter Your Email" id="email">
+          </div>
+
+          <p class="error-message" id="email-error"></p>
+
+          <div>
+            <label for="password">Password</label>
+          <div class="pass1">
+            <input type="password" placeholder="Enter Your Password" id="password">
+            <i class="fa-solid fa-eye" id="eyeicon"></i>
+          </div>
+          </div>
+
+          <p class="error-message" id="password-error"></p> 
+
+          <div>
+            <label for="confirmPassword">Confirm Password</label>
+              <div class="pass2">
+                <input type="password" placeholder="Confirm Your Password" id="confirmPassword">
+                <i class="fa-solid fa-eye" id="confirmEyeIcon"></i>
+              </div>
+          </div>
+
+          <p class="error-message" id="confirm-password-error"></p>
+
+            <button type="button" id="register">Signup</button>
+
             
-              <button type="button" id="register">Signup</button>
-            </div>
-        </div>
+      </div>
     </form>
     <a href="./signin.html">Signin</a>
 </body>
@@ -269,39 +309,48 @@ input[type=password]:focus {
         const analytics = getAnalytics(app);
         const auth = getAuth();
 
+        // ...
         document.getElementById("register").addEventListener("click", function (event) {
     event.preventDefault();
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-    let confirmPassword = document.getElementById("confirmPassword").value;
-    let userName = document.getElementById("name").value;
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    
+    // Clear previous error messages
+    const errorMessages = document.querySelectorAll(".error-message");
+    errorMessages.forEach(message => message.textContent = "");
 
     // Check if passwords match
     if (password !== confirmPassword) {
-        alert("Passwords do not match. Please confirm your password.");
-        document.getElementById("registration_form").classList.add("error-animation");
+        document.getElementById("confirm-password-error").textContent = "Passwords do not match.";
         return;
     }
 
     // Check if password is strong
     if (!isStrongPassword(password)) {
-        alert("Password is not strong enough. Please use a stronger password.");
-        document.getElementById("registration_form").classList.add("error-animation");
+        document.getElementById("password-error").textContent = "Password is not strong enough.";
         return;
     }
 
-    // Remove animation class if no error
-    document.getElementById("registration_form").classList.remove("error-animation");
-
+    // Create user
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            console.log(user);
-            alert("Registered successfully");
+            // Show success message
+            // Inside the createUserWithEmailAndPassword .then block
+                const successMessage = document.createElement("p");
+                successMessage.textContent = "Signup successful! Redirecting to signin page...";
+                successMessage.classList.add("success-message");
+                document.getElementById("registration_form").appendChild(successMessage);
+
+            
+            // Redirect after a brief delay
+            setTimeout(() => {
+                window.location.href = "./signin.html"; // Replace with your actual signin page URL
+            }, 2000); // Redirect after 3 seconds (adjust as needed)
         })
         .catch((error) => {
-            alert("Error: " + error.message);
+            document.getElementById("email-error").textContent = error.message;
             console.log(error.message);
         });
 });
