@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
+            background-size: cover;
+            background-color: rgba(43, 35, 35, 0.7); /* Adjust the opacity value (0.7) as needed */
+        }
+/* styles.css */
+
+
+.image-button:hover {
+    transform: scale(1.1);
+    
+}
+
+
+
+/* Animation for rotating the button */
+@keyframes rotateWheel {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Apply the animation on the button when clicked */
+.image-button.clicked {
+    animation: rotateWheel 2s linear;
+}
+
+.image-button {
+    margin-top: 200px;
+    margin-left: 350px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.image-button img {
+    width: 36%; /* Adjust the width and height as needed */
+    height: 20%;
+}
+
+/* Glitch */
+
+    </style>
+</head>
+<body>
+
+  <button class="image-button" type="button" id="register">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/800px-Google_%22G%22_Logo.svg.png" alt="">
+</button>
+      <div id="googlepng">
+        <img src="E:\Education\Masai_codes\Unit5a-project\Oestin_CW\images\google_png.png" alt="">
+      </div>
+      <form action="" id="registration_form" class="error-animation">
+          <div>
+            <button id="logout" style="display: none;">logout</button>
+          </div>
+    
+      </form>
+        <!-- <a href="./signin.html">Signin</a> -->
+</body>
+</html>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+
+  import { GoogleAuthProvider ,getAuth, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyBinM_1aYRB7P38tzdSpNIbvuagzHcxYwg",
+    authDomain: "unit5-72828.firebaseapp.com",
+    projectId: "unit5-72828",
+    storageBucket: "unit5-72828.appspot.com",
+    messagingSenderId: "316580438171",
+    appId: "1:316580438171:web:d519fe2a395505f50de63e",
+    measurementId: "G-GD2W6CCBJQ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+  console.log(app);
+
+
+  const provider = new GoogleAuthProvider();
+
+  const auth = getAuth();
+
+
+    document.getElementById("register").addEventListener("click", function (){
+      signInWithPopup(auth, provider)
+        .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+    // The signed-in user info.
+          const user = result.user;
+          console.log(user);
+          document.getElementById("logout").style.display="block";
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+        }).catch((error) => {
+    // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+    // The email of the user's account used.
+          const email = error.customData.email;
+    // The AuthCredential type that was used.
+          const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+        });
+    })
+
+</script>

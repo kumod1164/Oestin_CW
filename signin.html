@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <title>Signin</title>
+    <style>
+      /* // gradient: https://www.gradientmagic.com/collection/rainbowstandard */
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background: #222; */
+}
+
+#registration_form {
+  --border-width: 1px;
+
+  position: relative;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* width: 300px; */
+  /* height: 200px; */
+  font-family: Lato, sans-serif;
+  /* font-size: 1.0rem; */
+  /* text-transform: uppercase; */
+  color: white;
+  /* background: #222; */
+  border-radius: var(--border-width);
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),  
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 9s alternate infinite;
+  }
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+
+.bg {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 300% 300%;
+  background-image: linear-gradient(-45deg, yellow 0%, yellow 25%, yellow 51%, #ff357f 100%);
+  -webkit-animation: AnimateBG 20s ease infinite;
+          animation: AnimateBG 20s ease infinite;
+}
+
+@-webkit-keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+        /* CSS for the registration form */
+
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  
+  background: url('https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
+            background-size: cover;
+            /* filter: blur(8px); */
+            
+}
+#registration_form {
+  max-width: 400px;
+  margin: -54px 0 0 0;
+  padding: 72px;
+  /* border-radius: 8px; */
+  box-shadow:0 0 10px #ffe168;
+  /* background-color: #b5876d; */
+  
+  /* transition: background-color 5s ease; */
+}
+
+
+#registration_form div {
+  margin-bottom: 10px;
+  /* background-color: #b5876d; */
+  
+  /* transition: background-color 5s ease; */
+}
+
+#registration_form a {
+  text-decoration: none;
+  font-size: small;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Additional styles for better visualization */
+
+h1 {
+  
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: -30px;
+}
+button {
+  display: block;
+  width: 100%;  
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #ffcc00;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff9900;
+}
+
+#pass1  {
+  display: flex;
+  align-items: center;
+  border: 0;
+  /* border: 1px solid; */
+}
+#eyeicon {
+  color: #222;
+  opacity: 50%;
+  margin-left: -32px;
+  
+}
+#eyeicon:hover {
+  opacity: 90%;
+  cursor: pointer;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border-radius: 18px;
+  border-color: #F3E5AB;
+  box-shadow: 0 0 10px #F3E5AB;
+}
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+#google-signin-btn {
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+  width: 100%;  
+  padding: 10px 0 10px 0;
+  background-color: #e13c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#google-signin-btn:hover {
+    background-color: #c23321;
+}
+input[type=password]:focus {
+  border-radius: 18px;
+  border-color: #F3E5AB;
+  box-shadow: 0 0 10px #F3E5AB;
+}
+
+.error-message {
+  font-size: 10px;
+  color: red;
+}
+.error-form {
+    animation: ShadowError 5s ease-in-out; /* Change animation duration and easing as needed */
+}
+
+@keyframes ShadowError {
+    0%, 100% {
+        box-shadow: 0 0 10px #ffe168;
+    }
+    15%, 85% {
+        box-shadow: 0 0 20px #ff0000; /* Change this color to your desired error color */
+    }
+}
+@keyframes borderError {
+    0%, 100% {
+      box-shadow: 0 0 10px #ffc6c6; /* Original border color */
+    }
+    15%, 85%{
+        box-shadow: 0 0 10px #ff0000; /* Change this color to your desired error color */
+    }
+}
+
+.error-field {
+    animation: borderError 10s ease-in-out; /* Adjust duration and easing as needed */
+}
+.animate-charcter
+{
+  
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  /* display: inline-block; */
+      /* font-size: 190px; */
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+#loginSuccessMessage {
+  font-size: small;
+  color:#62ff74;
+}
+
+
+
+    </style>
+</head>
+<body>
+  <div class="hover-container">
+    <div class="content">
+    <form action="" id="registration_form"> 
+      <h1>Welcome to Oestin</h1>
+        <br>
+        <h2 class="animate-charcter">Sign In</h2>
+
+          <div>
+            <!-- <label for="">Email</label> -->
+            <input type="text" placeholder="Username" id="login_email">
+            <div id="emailMessage" class="error-message"></div>
+        </div>
+        <div id="pass">
+            <div>
+                <!-- x<label for="">Password</label> -->
+                <div id="pass1">
+                    <input type="password" placeholder="Password" id="login_password">
+                    <i class="fa-solid fa-eye" id="eyeicon"></i>
+                </div>
+                
+                <div id="passwordMessage" class="error-message"></div>
+                <button type="button" id="login" style="display: block;" onclick="this.style.display='none'">Login</button>
+                <div id="loginSuccessMessage" class="success-message"></div>
+            <a href="./Google Authentication/google.html" id="google-signin-btn">Sign In with Google</a>    
+            </div>
+
+            <div>
+                <button id="logout" style="display: none;">Logout</button>
+            </div>
+            <a href="./signup.html" id="signup-link">Don't have an account? Sign Up</a>
+
+        </div>
+    </form>
+  </div>
+  <div class="image-overlay"></div>
+</div>
+    <!-- <a href="./signup.html">Signup</a> -->
+
+</body>
+</html>
+<script type="module" src="./signin.js"></script>
+
+
+
+
+
