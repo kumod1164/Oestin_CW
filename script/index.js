@@ -34,3 +34,23 @@ for(let i=0; i<btn.length; i++){
     })
 }
 
+// Slider Function End
+
+// SERVICES SECTION STARTS
+
+let arr = document.querySelectorAll("#about_services>div>div:nth-child(2)>div:first-child>div");
+console.log(arr);
+
+for(let i=0; i<arr.length; i++){
+    arr[i].addEventListener("click", () => {
+        console.log("Working");
+        console.log(arr[i]);
+        arr[i].style.background = "#b5876d";
+        arr[i].style.color = "white";
+        let temp = arr[i].childNodes[1].innerHTML
+        console.log(temp)
+        
+    })
+}
+
+// SERVICES SECTION ENDS

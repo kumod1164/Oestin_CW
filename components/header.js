@@ -2,7 +2,7 @@
 
 let header = () => {
     return `
-        <div id="shape"></div>
+    <div id="shape"></div>
         <div id="header">
             <div id="header_left">
                 <a href="index.html"><img src="./images/Oesin_logo.webp" alt=""></a>
@@ -81,6 +81,7 @@ let header = () => {
                 </div>
             </div>
         </div>
+        
     `
 }
 
