@@ -10,6 +10,7 @@ Tech Stack Used :-
 1. #Cyclic for deploying JSON Server
 2. #Firebase for Google Authentication
 3. #RazorPay for payment
+4. #Netlify for Deploying the whole project
 
 
 Project Contributors :-
