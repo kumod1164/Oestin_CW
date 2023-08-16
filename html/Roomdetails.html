@@ -6,8 +6,18 @@
     <title>Room Details</title>
     <link rel="stylesheet" href="../styles/Roomdetails.css">
     <link rel="stylesheet" href="../styles/navbar.css">
-</head>
-<body>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    </head>
+    
+
+
+<body style="font-family: 'Lato', sans-serif;">
     <div id="header">
 
     </div>
@@ -30,9 +40,46 @@
 
         <div id="roomdetailcard">
             <div id="roomdetailimg">
-                <div id="rdimg1">
+                <!-- <div id="rdimg1">
                     <img src="https://th.bing.com/th/id/OIP.uoPRN97EO3CMQbZrFykX6AHaEn?w=306&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="">
-                </div>
+                </div> -->
+
+                <div class="container">
+                    <!--Show Slideshow here-->
+                    <div class="swiper">
+                      <!-- Additional required wrapper -->
+                      <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                        <img class="cropped-ofp"  id="firstimg" src="" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img class="cropped-ofp" src="../images/pexels-karl-solano-2883047.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img class="cropped-ofp" src="../images/pexels-leonardo-rossatti-2598638.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img class="cropped-ofp" src="../images/pexels-nida-kurt-17836120.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img class="cropped-ofp" src="../images/pexels-pixabay-53577.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img class="cropped-ofp" src="../images/pexels-max-rahubovskiy-6032425.jpg" alt="">
+                        </div>
+                        ...
+                      </div>
+                      <!-- If we need pagination -->
+                      <div class="swiper-pagination"></div>
+                    
+                      <!-- If we need navigation buttons -->
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+
+
                 <div id="pricebox">
                     <div id="pricetext">
                         <h2>30,500</h2>
