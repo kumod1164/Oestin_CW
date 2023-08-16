@@ -8,7 +8,7 @@ let menuVariable_mouseLeave = (dropDownList, menuSubmenu) => {
     let temp = setTimeout(() => {
         if(dropDownList)
             menuSubmenu.classList.add("hide");
-    }, 300)
+    }, 500)
     return false;
 }
 
