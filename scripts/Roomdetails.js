@@ -1,3 +1,13 @@
+import header from"../components/header.js"
+
+document.getElementById("header").innerHTML=header();
+
+import footer from"../components/footer.js"
+
+document.getElementById("footer").innerHTML=footer();
+
+
+
 // const parentcontainer=document.getElementById("aboutproperty");
 // parentcontainer.addEventListener("click",event=>{
 //     const current =event.target
@@ -35,11 +45,34 @@ apbtn.addEventListener("click",function(){
 
 })
 
+
+const swiper = new Swiper('.swiper', {
+    autoplay:{
+        delay:3000,
+        disableOnInteraction:false,
+    },
+    loop: true,
+  
+    
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  
+    
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+
 let prodData=JSON.parse(localStorage.getItem("prodData"))
 
 let {area,bed,description,image,name,price,view}=prodData;
 
-document.querySelector("#rdimg1 >img").src=image;
+// document.querySelector("#rdimg1 >img").src=image;
+document.getElementById("firstimg").src=image
 
 document.querySelector("#pricetext >h2").innerText= price;
 
@@ -52,6 +85,7 @@ document.querySelector("#area >span").innerText=area;
 document.querySelector("#bedtype >span").innerText=bed;
 
 document.querySelector("#view >span").innerText=view;
+
 let cart=[];
 let bookbtn=document.getElementById("pricebox")
 bookbtn.addEventListener("click",function(){
@@ -60,3 +94,4 @@ bookbtn.addEventListener("click",function(){
     window.href="#";
     // console.log(cart)
 })
+

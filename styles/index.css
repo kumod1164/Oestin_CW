@@ -1,4 +1,8 @@
 /* SLIDER SECTION */
+/* body{
+    padding: 0;
+    margin: 0;
+}
 
 #content {
     position: absolute;
@@ -6,9 +10,12 @@
     display: flex;
     text-align: center;
     justify-content: space-between;
+    align-items: center;
     padding-top: 20%;
     padding-bottom: 15%;
-    width: 99.2%;
+    width: 100%;
+    height: 30%;
+    margin-bottom: 10%;
     background-color: rgba(51, 50, 50, 0.5);
     color: white;
 }
@@ -19,7 +26,9 @@
     font-size: 2rem;
     padding: 30%;
 }
-
+#content > div:nth-child(3){
+    padding: 1%;
+}
 #content>div>i:hover {
     background-color: #b5876d;
     color: white;
@@ -41,12 +50,12 @@
     color: #b5876d;
     background-color: none;
     border: none;
-    /* position: relative;
+    position: relative;
     bottom: 0;
     left: 0;
-    right: 0; */
+    right: 0;
     background-color: none;
-    /* background-color: rgba(51, 50, 50, 0.327); */
+    background-color: rgba(51, 50, 50, 0.327);
 }
 
 #content>div:nth-child(2) button:hover {
@@ -54,7 +63,8 @@
     height: 100%;
     background-color: #b5876d;
     color: white;
-}
+} */
+
 
 
 /* SLIDER SECTION ENDS */
@@ -62,23 +72,31 @@
 /* ABOUT US SECTION START */
 
 #about_size {
-    padding: 1% 10%;
-    padding-top: 48%;
+    /* padding: 1% 10%;
+    padding-top: 45%; */
+    position: relative;
+    margin-top: 0%;
 }
 
 #about_size>div {
     position: relative;
     display: flex;
     flex-direction: column;
-    row-gap: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
+    row-gap: 10px;
 }
 
-#about_size>div>div:first-child {
+#about_size > div > div:first-child {
     position: absolute;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     column-gap: 30px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     padding: 5%;
+    margin-left: 10%;
     background-color: white;
 }
 
@@ -94,12 +112,22 @@
     border: none;
     background: none;
 }
+#about_size>div>div:first-child>div:last-child{
+    background-color: #b5876d;
+}
+#about_size>div>div:first-child>div:last-child:hover{
+    background-color: black;
+}
+#about_size>div>div:first-child>div:last-child>button{
+    color: white;
+}
 
 #about_size>div>div:nth-child(2)>div {
     display: flex;
     flex-direction: row;
     padding-top: 20%;
     column-gap: 30px;
+    padding-left: 0%;
 }
 
 #about_size>div>div:nth-child(2)>div>div:first-child {
@@ -169,6 +197,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    margin-top: 5%;
 }
 
 #about_rooms>div>div:first-child {
@@ -177,14 +206,17 @@
 }
 
 #about_rooms>div>div:nth-child(2) {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    position: relative;
 }
 
 #about_rooms>div>div:nth-child(2)>div {
     position: relative;
+    border: 1px solid black;
 }
-
+/* #about_rooms>div>div:nth-child(2)>div>img{
+    width: 350px;
+} */
 #about_rooms>div>div:nth-child(2)>div>div {
     position: absolute;
     color: white;
@@ -200,7 +232,7 @@
 
 #about_rooms>div>div:nth-child(2)>div:hover>div {
     top: 0;
-    height: 70%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -210,6 +242,16 @@
     text-align: center;
     padding-top: 40%;
 }
+#about_rooms button{
+    background-color: #b5876d;
+    border: none;
+    padding: 2%;
+    color: white;
+}
+#about_rooms button:hover{
+    color: #b5876d;
+    background-color: white;
+}
 
 /* ABOUT ROOMS SECTION ENDS */
 
@@ -217,6 +259,7 @@
 
 #about_services {
     padding: 1% 10%;
+    margin-top: 5%;
 }
 
 #about_services>div>div:first-child {
@@ -242,7 +285,7 @@
     column-gap: 30px;
     row-gap: 1px;
     padding: 2%;
-    height: 100px;
+    height: auto;
 }
 
 #about_services>div>div:nth-child(2)>div:first-child>div:first-child {
@@ -301,6 +344,9 @@
 
 /* GALLERY SECTION STARTS HERE */
 
+#gallery_area{
+    margin-top: -10%;
+}
 #gallery_area>#container_text,
 #gallery_area>#container_images {
     display: flex;
@@ -339,7 +385,7 @@
 }
 
 #gallery_area>#container_images>#image_container>div {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 /* GALLERY SECTION ENDS HERE */
@@ -347,7 +393,8 @@
 /* TEAM AREA SECTION STARTS */
 
 #team_area {
-    padding: 5% 10%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 #team_area>#team_area_container {
@@ -370,6 +417,7 @@
     display: flex;
     position: relative;
     column-gap: 10px;
+    justify-content: center;
 }
 
 #team_area_staff>.staff_profile {
@@ -597,7 +645,8 @@
 /* BLOG AREA STARTS */
 
 #blog_area {
-    padding-left: 10%;
+    /* padding-left: 2%;
+    padding-right: 2%; */
     padding-bottom: 5%;
 }
 
@@ -618,7 +667,7 @@
 #blog_area_container>#text_container>div:nth-child(2) {
     width: 50%;
     align-self: center;
-    margin-top: -2%;
+    margin-top: 0;
 }
 
 #blog_area_container>#blog_posts {
@@ -643,7 +692,7 @@
     justify-content: center;
     align-items: center;
     padding: 10%;
-    /* position: relative; */
+    
 }
 #blog_posts > .blog_post_card > div:nth-child(2) > div:first-child{
     color: #c2c2c2;
@@ -659,7 +708,7 @@
     left: 0;
     right: 0;
     overflow: hidden;
-    height: 0%;
+    height: 0;
     transition: 0.5s ease;
     display: flex;
     text-align: center;
@@ -668,9 +717,10 @@
 }
 .blog_post_card:hover > div:nth-child(2) > #overlay,
 .blog_post_card > div:nth-child(2) > #overlay:hover{
-    top: 0%;
+    top: 0;
     height: 100%;
     overflow: hidden;
+    /* bottom: 100; */
 }
 .blog_post_card > div:nth-child(2) > #overlay > div{
     display: flex;
@@ -813,3 +863,4 @@
 } 
 
 /* NEWSLETTER AREA ENDS */
+

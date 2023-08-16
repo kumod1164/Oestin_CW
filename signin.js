@@ -62,6 +62,7 @@
          console.log(user);
          document.getElementById("logout").style.display = "block";
          document.getElementById("loginSuccessMessage").textContent = "Login successful!";
+         window.location.href="../Oestin_CW/index.html"
          document.getElementById("login").style.display = 'none';
      })
      .catch((error) => {

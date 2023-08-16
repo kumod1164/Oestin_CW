@@ -1,6 +1,10 @@
+import header from"../components/header.js"
 
+document.getElementById("header").innerHTML=header();
 
+import footer from"../components/footer.js"
 
+document.getElementById("footer").innerHTML=footer();
 let page=1;
 let detail =[];
 let totalpage;
@@ -21,37 +25,65 @@ async function fetching(page){
 
 
 //getting total pages
-async function totalPagesAre(){
-    let res= await fetch(`https://drab-belt-newt.cyclic.cloud/rooms`)
-    let result=await res.json()
-    console.log(result.length)
-    totalpage=result.length
+// async function totalPagesAre(){
+//     let res= await fetch(`https://drab-belt-newt.cyclic.cloud/rooms`)
+//     let result=await res.json()
+//     // console.log(result.length)
+//     totalpage=result.length
     
     
-}
+// }
 
 fetching(page);
-totalPagesAre();
-console.log(totalpage)
-
+// totalPagesAre();
+// console.log(totalpage)
+let all= 2;
 
 let paginationAre=()=>{
     
-    let all= totalpage/5;  
+      
     let pagdiv=document.getElementById("pagination")
     // let body=document.querySelector("body")
 
-    for(let i=1; i<all; i++){
+    let leftarr=document.createElement("div")
+    let leftarrbtn=document.createElement("button")
+    leftarrbtn.innerText="<<";
+    leftarr.append(leftarrbtn)
+    pagdiv.append(leftarr)
+
+
+    for(let i=1; i<=all; i++){
         let div=document.createElement('div')
         let btn=document.createElement('button')
+        btn.setAttribute("id",i)
          btn.textContent=i;
          btn.classList='pageBtn'
          div.append(btn)
          pagdiv.append(div)
 
     }
+
+    let rightarr=document.createElement("div")
+    let rightarrbtn=document.createElement("button")
+    rightarrbtn.innerText=">>";
+    rightarr.append(rightarrbtn)
+    pagdiv.append(rightarr)
+
 }
 paginationAre()
+
+async function pagefun (pageno){
+    page=pageno;
+
+}
+document.getElementById("1").addEventListener("click",function(){
+pagefun(1);
+})
+
+document.getElementById("2").addEventListener("click",function(){
+    pagefun(2);
+})
+
 
 
 
@@ -63,10 +95,10 @@ sp.addEventListener("change",function(){
 async function sortcart(){
     let res;
     if(sp.value=="Low to High"){
-        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?_sort=price&_order=asc&_page=1&_limit=5`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?_sort=price&_order=asc&_page=${page}&_limit=5`)
         
     }else if(sp.value=="High to Low"){
-        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?_sort=price&_order=desc&_page=1&_limit=5`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?_sort=price&_order=desc&_page=${page}&_limit=5`)
     }
     
     
@@ -101,7 +133,7 @@ async function sortview(){
     
     
     let result=await res.json();
-    // console.log(result);
+    console.log(result);
     
     try{
         // console.log(result);
@@ -146,7 +178,64 @@ async function filterbed(){
 }
 
 
+
+//Search
+
+let query=document.getElementById("searchinput")
+
+let stbn=document.addEventListener("click",async function(){
+
+    try{
+        let res= await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?q=${query.value}&_page=${page}&_limit=5`)
+        let result=await res.json();
+        // console.log(result);
+        appenddata(result);
+        return result;
+    }catch(error){
+        return error
+    }
+    
+
+})
+
+
+
+//debouncing
+// let id;
+// console.log(debounce)
+// function debounce(a){
+//     if(id){
+//         clearTimeout(id);
+//     }
+//     id=setTimeout(()=>{
+//         a();
+//     },2000)
+// }
+
+
+// async function main(){
+//     let query=document.getElementById("searchinput")
+//     try{
+        
+//         let res= await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?q=${query.value}&_page=${page}&_limit=5`)
+//         let result=await res.json();
+//         console.log(result);
+//         appenddata(result);
+//         return result;
+//     }catch(error){
+//         return error
+//     }
+    
+
+// }
+
+
+
+
 //Append
+
+
+
 
 function appenddata(data){
     let roomrow=document.getElementById("roomrow")
@@ -273,6 +362,7 @@ function appenddata(data){
         
 
     })
+    
 
 }
 

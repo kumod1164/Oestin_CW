@@ -47,14 +47,15 @@
         width: calc(100% + var(--border-width) * 2);
         height: calc(100% + var(--border-width) * 2);
         background: linear-gradient(60deg,
-            hsl(224, 85%, 66%),
-            hsl(269, 85%, 66%),
-            hsl(314, 85%, 66%),
-            hsl(359, 85%, 66%),
-            hsl(44, 85%, 66%),
-            hsl(89, 85%, 66%),
-            hsl(134, 85%, 66%),
-            hsl(179, 85%, 66%));
+            hsl(224, 100%, 9%),
+            hsl(269, 100%, 17%),
+            hsl(314, 100%, 28%),
+            hsl(359, 100%, 24%),
+            hsl(0, 100%, 37%),
+            hsl(280, 100%, 15%),
+            hsl(280, 100%, 18%),
+            hsl(274, 100%, 14%)
+            );
         background-size: 300% 300%;
         background-position: 0 50%;
         /* border-radius: calc(2 * var(--border-width)); */
@@ -91,6 +92,10 @@
       text-decoration: none;
       font-size: small;
     }
+    #signin-link {
+      /* font-size: 14px; */
+      color: #ccc;
+    }
 
     label {
       font-weight: bold;
@@ -124,7 +129,7 @@
       display: block;
       width: 100%;
       padding: 10px;
-      background-color: #ffcc00;
+      background-color: #ff9500;
       color: #fff;
       border: none;
       border-radius: 4px;
@@ -132,7 +137,7 @@
     }
 
     button:hover {
-      background-color: #ff9900;
+      background-color: #ff6600;
     }
 
     .pass1 {
@@ -220,8 +225,8 @@
     }
 
     .error-message {
-      font-size: small;
-      color: red;
+      font-size:14px;
+      color: rgb(255, 170, 170);
       margin-top: 5px;
     }
 
@@ -230,7 +235,7 @@
     .success-message {
       font-size: 14px;
       /* Adjust the font size as needed */
-      color: green;
+      color: rgb(130, 255, 130);
       text-align: center;
       margin-top: 10px;
     }
@@ -311,7 +316,7 @@
       /* Reduce opacity on hover */
     }
 
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 619px) {
       /* Adjust form margin for small screens */
       #registration_form {
         margin: 20px;
@@ -323,6 +328,9 @@
       input[type="text"],
       input[type="password"] {
         font-size: 14px;
+        padding: 0 0 -20px 0;
+        margin: 0 0 -10px 0;
+
       }
 
       /* Adjust button width for small screens */
@@ -360,13 +368,13 @@
       }
     }
 
-    @media only screen and (max-width: 1080px) and (min-width: 701px) {
+    @media only screen and (max-width: 1080px) and (min-width: 981px) {
       /* Modify form width for laptop screens */
       #registration_form {
         max-width: 80%;
         margin: 50px auto;
-        margin-left: 150px;
-        margin-right: 150px;
+        margin-left: 280px;
+        margin-right: 280px;
       }
 
       /* Adjust font size for laptop screens */
@@ -381,6 +389,37 @@
       .pass2 i {
         font-size: 20px;
       }
+    }
+
+    @media only screen and (max-width: 980pxx) and (min-width: 620px) {
+      /* Modify form width for laptop screens */
+      #registration_form {
+        max-width: 80%;
+        margin: 50px auto;
+        margin-left: 180px;
+        margin-right: 180px;
+      }
+
+      /* Adjust font size for laptop screens */
+      input[type="text"],
+      input[type="password"],
+      button {
+        font-size: 16px;
+      }
+
+      /* Adjust eye icon size for laptop screens */
+      .pass1 i,
+      .pass2 i {
+        font-size: 20px;
+      }
+    }
+    #register {
+      font-weight: 700;
+      font-size: medium;
+    }
+    #signincolor {
+      color: #7ec7ff;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -397,16 +436,16 @@
       <h2 id="animate-charcter">Sign Up</h2>
       <div>
         <!-- Update the error message elements -->
-        <div>
+        <!-- <div> -->
           <!-- <label for="userName">UserName</label> -->
-          <input type="text" placeholder="UserName" id="name">
-        </div>
+          <!-- <input type="text" placeholder="UserName" id="name"> -->
+        <!-- </div> -->
 
         <p class="error-message" id="name-error"></p>
         <!-- <label for="email">Email</label> -->
 
         <div>
-          <input type="text" placeholder="Email" id="email">
+          <input type="text" placeholder="Email / UserName" id="email">
         </div>
 
         <p class="error-message" id="email-error"></p>
@@ -433,7 +472,7 @@
 
         <button type="button" id="register">Signup</button>
 
-        <a href="./signin.html" id="signin-link">Already have an account? Sign In</a>
+        <a href="./signin.html" id="signin-link">Already have an account? <span id="signincolor">Sign In</span> </a>
 
       </div>
     </form>

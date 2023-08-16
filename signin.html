@@ -17,6 +17,7 @@
       align-items: center;
       height: 100vh;
       /* background: #222; */
+      
     }
 
     #registration_form {
@@ -44,20 +45,22 @@
         width: calc(100% + var(--border-width) * 2);
         height: calc(100% + var(--border-width) * 2);
         background: linear-gradient(60deg,
-            hsl(224, 85%, 66%),
-            hsl(269, 85%, 66%),
-            hsl(314, 85%, 66%),
-            hsl(359, 85%, 66%),
-            hsl(44, 85%, 66%),
-            hsl(89, 85%, 66%),
-            hsl(134, 85%, 66%),
-            hsl(179, 85%, 66%));
+        hsl(224, 100%, 9%),
+            hsl(269, 100%, 17%),
+            hsl(314, 100%, 28%),
+            hsl(359, 100%, 24%),
+            hsl(0, 100%, 37%),
+            hsl(280, 100%, 15%),
+            hsl(280, 100%, 18%),
+            hsl(274, 100%, 14%)
+            );
         background-size: 300% 300%;
         background-position: 0 50%;
         border-radius: calc(2 * var(--border-width));
         animation: moveGradient 9s alternate infinite;
       }
     }
+
 
     @keyframes moveGradient {
       50% {
@@ -141,9 +144,12 @@
 
     #registration_form a {
       text-decoration: none;
-      font-size: small;
+      /* font-size: small; */
     }
-
+    #signup-link {
+      color: #ccc;
+      font-size: 14px;
+    }
     label {
       font-weight: bold;
       display: block;
@@ -252,6 +258,7 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-weight: 700;
     }
 
     #google-signin-btn:hover {
@@ -264,9 +271,9 @@
       box-shadow: 0 0 10px #F3E5AB;
     }
 
-    .error-message {
-      font-size: 10px;
-      color: red;
+    .error-message {  
+      font: size 10px;;
+      color: rgb(255, 170, 170);
     }
 
     .error-form {
@@ -334,7 +341,10 @@
         background-position: 200% center;
       }
     }
-
+    #login {
+      font-size: 14px;
+      font-weight: 700;
+    }
     #loginSuccessMessage {
       font-size: small;
       color: #62ff74;
@@ -366,7 +376,7 @@
 
         <div>
           <!-- <label for="">Email</label> -->
-          <input type="text" placeholder="Username" id="login_email">
+          <input type="text" placeholder="Username / Email" id="login_email">
           <div id="emailMessage" class="error-message"></div>
         </div>
         <div id="pass">

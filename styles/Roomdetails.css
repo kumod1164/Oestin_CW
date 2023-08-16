@@ -1,3 +1,54 @@
+
+  /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap'); */
+  
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .cropped-ofp {
+    width: 640px; 
+    height: 427px; 
+    object-fit: cover;
+    object-position: 25% 25%; 
+    }
+
+  .container{
+    width: 100%;
+    /* height: 80vh; */
+    /* background: #222; */
+    display: flex;
+    align-items: center;
+    
+    /* justify-content: center; */
+    margin-bottom: 50px;
+  }
+  .swiper{
+       width: 105%;
+       height: fit-content;
+       border-radius: 15px;
+  }
+  .swiper-slide img{
+    width: 100%;
+    /* height: 81vh; */
+  
+  }
+  .swiper .swiper-button-prev, .swiper .swiper-button-next{
+    color: aliceblue;
+  }
+  .swiper .swiper-pagination-bullet-active{
+    background: #fff;
+  }
+
+  /* end */
+
+body{
+  /* font-family: 'Lato', sans-serif; */
+}
 p,span{
   color: rgb(100,103,114);
 }
@@ -78,6 +129,9 @@ position: absolute;
   margin: auto;
   
   /* margin-left: 30px; */
+}
+#roomdetailname {
+  padding: 20px 0px;
 }
 
 #roomdetaildescri p{
@@ -198,6 +252,7 @@ position: absolute;
 
 h3{
   font-size: 24px;
+  padding: 20px 0px;
 }
 button{
   width: 50%;
@@ -218,6 +273,7 @@ button{
   height: 50%;
   margin: auto;
   /* display:contents; */
+  padding: 30px;;
   
 }
 
@@ -226,6 +282,7 @@ iframe{
   /* height: 100%; */
   border-radius: 10px;
   margin: auto;
+  /* padding-top: 30px; */
 }
 
 #pricetext{
@@ -250,6 +307,7 @@ iframe{
   background-color: #b5876d;
   color: #fff;
   width: 30%;
+  border: none;
 }
 
 #roomdetailimg{
