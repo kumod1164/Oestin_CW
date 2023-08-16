@@ -1,0 +1,42 @@
+{
+    
+    
+
+
+    "rooms":[
+        {
+            "id":1 ,"image":"https://th.bing.com/th/id/OIP.TWrb2yD1hyKqGoVVLNxaEAHaE7?w=243&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7","name":"Single Room","description": "Welcome to our elegant and inviting Single Room, where comfort meets sophistication. Designed with the solo traveler in mind, this well-appointed sanctuary offers a delightful escape from the bustling world outside. Step into a world of tranquility and indulge in a memorable stay tailored just for you.","area":"35 Sq Meter ","view": "City", "bed":"Single", "price":" ₹ 8,000"
+        },
+        {
+            "id":2 ,"image":"https://th.bing.com/th/id/OIP.uoPRN97EO3CMQbZrFykX6AHaEn?w=306&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7","name":"Royal Suite","description": "Welcome to our Royal Suite, where opulence and grandeur converge to create an unforgettable stay fit for royalty. This expansive and lavishly appointed suite is designed to cater to the most discerning guests, offering a truly regal experience that exceeds expectations.","area":"120 Sq Meter","view": "Ocean","bed":"Double", "price":"₹ 40,000"
+        },
+        {
+            "id":3 ,"image":"https://th.bing.com/th/id/OIP.7Qw5TODF9dBm9a9SR18hfQHaE8?w=278&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7","name":"Delux Room","description": "Welcome to our Deluxe Room, a tranquil haven designed to provide a perfect blend of comfort and modern elegance. Whether you're here for business or leisure, our thoughtfully appointed Deluxe Room offers a delightful retreat to recharge and rejuvenate.","area":"50Sq Meter","view": "Ocean","bed":"King", "price":"₹ 30,000"
+        },
+        {
+            "id":4 ,"image":"https://th.bing.com/th/id/OIP.dH2oSXFAdKK-M4I_Pm6xlAHaE8?w=286&h=190&c=7&r=0&o=5&dpr=1.3&pid=1.7","name":"Presidential Suite","description": "Step into the realm of unparalleled luxury with our Presidential Suite, the epitome of opulence and refinement. This lavish sanctuary offers an extraordinary living experience that surpasses all expectations. From the moment you enter, you'll be enveloped in a world of indulgence, where every detail has been meticulously curated to elevate your stay into an unforgettable memory.","area":"130 Sq Meter","view": "City", "bed":"King", "price":"₹ 20,000"
+        },
+        {
+            "id":5 ,"image":"https://th.bing.com/th/id/OIP.XWjS-oS1OOpdFO4BB_tmfAHaEK?w=307&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7","name":"Penthouse Suite","description": "Welcome to our Penthouse Suite, a sanctuary perched at the pinnacle of sophistication and elegance. Situated on the highest floor, this exclusive retreat offers panoramic views that stretch beyond the horizon. With a blend of opulent interiors, personalized services, and awe-inspiring vistas, the Penthouse Suite promises an experience that transcends all expectations.","area":"100 Sq Meter","view": "Ocean","bed":"King", "price":"₹ 45,000"
+        },
+        {
+            "id":6 ,"image":"https://th.bing.com/th/id/OIP.hnC9m3mVPTuskjKr0UzLnQHaE8?w=286&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7","name":"Superior Room","description": "Welcome to our Superior Room, where comfort and elegance converge to provide an exceptional stay that exceeds your expectations. Designed to offer more space and upgraded amenities, this room promises a delightful retreat for both business and leisure travelers. Experience the perfect blend of style and functionality in an environment where every detail has been carefully crafted to ensure your utmost comfort.","area":"40 Sq Meter","view": "City", "bed":"Double", "price":"₹ 23,000"
+        },
+        {
+            "id":7 ,"image":"https://th.bing.com/th/id/OIP.3lOX4-qS-uXITyJTfHPecQHaFE?w=261&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7","name":"Standard Room","description": "Welcome to our Superior Room, where comfort and elegance converge to provide an exceptional stay that exceeds your expectations. Designed to offer more space and upgraded amenities, this room promises a delightful retreat for both business and leisure travelers. Experience the perfect blend of style and functionality in an environment where every detail has been carefully crafted to ensure your utmost comfort.","area":"50 Sq Meter","view": "City", "bed":"King", "price":"₹ 25,000"
+        },
+        {
+            "id":8 ,"image":"https://th.bing.com/th/id/OIP.ABqXFuAsE0hP1jEjf1dGBAHaFj?w=267&h=200&c=7&r=0&o=5&dpr=1.3&pid=1.7","name":"Double Room","description": "Welcome to our Double Room, a comfortable and inviting space designed to accommodate you and a companion during your stay. Whether you're traveling with a friend, family member, or loved one, this room provides a cozy retreat where you can relax, unwind, and create cherished memories together.","area":" 70 Sq Meter","view": "City", "bed":"King", "price":"₹ 15,000"
+        },
+        {
+            "id":9 ,"image":"https://th.bing.com/th/id/OIP.lcobnbARfqpRq7wh5VB1RwHaE8?w=225&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7","name":"Royal Suite","description": "Welcome to our Royal Suite, where opulence and grandeur converge to create an unforgettable stay fit for royalty. This expansive and lavishly appointed suite is designed to cater to the most discerning guests, offering a truly regal experience that exceeds expectations.","area":"120 Sq Meter","view": "Ocean","bed":"Double", "price":"₹ 40,550"
+        },
+        {
+            "id":10 ,"image":"https://th.bing.com/th/id/OIP.7Qw5TODF9dBm9a9SR18hfQHaE8?w=278&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7","name":"Delux Room","description": "Welcome to our Deluxe Room, a tranquil haven designed to provide a perfect blend of comfort and modern elegance. Whether you're here for business or leisure, our thoughtfully appointed Deluxe Room offers a delightful retreat to recharge and rejuvenate.","area":"50Sq Meter","view": "City", "bed":"King", "price":"₹ 13,000"
+        }
+
+    ]
+
+
+    
+}
