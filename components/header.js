@@ -2,86 +2,67 @@
 
 let header = () => {
     return `
-    <div id="shape"></div>
-        <div id="header">
-            <div id="header_left">
-                <a href="index.html"><img src="./images/Oesin_logo.webp" alt=""></a>
-            </div>
-            <div id="header_right">
-                <div id="header_right_line_1">
-                    <div id="header_right_contact">
-                        <div><p style="color: #b5876d;">Contact:</p></div>&nbsp;&nbsp;
-                        <div><p style="color: white;">0123456789</p></div>
-                    </div>
-                    <div id="header_right_socialMedia">
-                        <div><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a></div>
-                        <div><a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a></div>
-                        <div><a href="https://workspace.google.com/"><i class="fa-brands fa-google-plus-g"></i></a></div>
-                        <div><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></div>
-                        <div><a href="https://in.pinterest.com/"><i class="fa-brands fa-pinterest-p"></i></a></div>
-                    </div>
-                </div>
-                <hr id="header_right_hr">
-                <div id="header_right_line_2">
-                    <div id="header_right_menubar">
-                        <div><a href="#">HOME</a></div>
-                        <div>
-                            <div id="rooms">
-                                <a href="#">ROOMS</a>
-                                <div class="rooms_submenu hide">
-                                    <div><a href="#">ROOM LIST</a></div>
-                                    <div><a href="#">ROOM DETAILS</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div id="activities">
-                                <a href="#">ACTIVITIES</a>
-                                <div class="activities_submenu hide">
-                                    <div>
-                                        <div class="activities_submenu_megamenu" id="activities_submenu_megamenu">
-                                            <div><a href="#">MEGAMENU LIST</a></div>
-                                            <div class="activities_submenu_megamenu_list">
-                                                <div><a href="#">Location</a></div>
-                                                <div><a href="#">Room Grid</a></div>
-                                                <div><a href="#">Room List</a></div>
-                                                <div><a href="#">Room Details</a></div>
-                                                <div><a href="#">Mega Menu</a></div>
-                                            </div>
-                                        </div>
-                                        <div class="activities_submenu_megamenu" id="activities_submenu_megamenu">
-                                            <div><a href="#">MEGAMENU LIST</a></div>
-                                            <div class="activities_submenu_megamenu_list">
-                                                <div><a href="#">Room Grid</a></div>
-                                                <div><a href="#">Room List</a></div>
-                                                <div><a href="#">Room Details</a></div>
-                                                <div><a href="#">Mega Menu</a></div>
-                                                <div><a href="#">Location</a></div>
-                                            </div>
-                                        </div>
-                                        <div class="activities_submenu_megamenu" id="activities_submenu_megamenu">
-                                            <div><a href="#">MEGAMENU LIST</a></div>
-                                            <div class="activities_submenu_megamenu_list">
-                                                <div><a href="#">Room List</a></div>
-                                                <div><a href="#">Room Details</a></div>
-                                                <div><a href="#">Mega Menu</a></div>
-                                                <div><a href="#">Location</a></div>
-                                                <div><a href="#">Room Grid</a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div><a href="#">LOCATION</a></div>
-                        <div><a href="#">EVENT</a></div>
-                        <div><a href="#">TEAM</a></div>
-                        <div><a href="#">CONTACT</a></div>
-                    </div>
-                </div>
+    <div id="shape">
+
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-rgba(51, 50, 50, 0.1) fixed-top" style="background-color: #555151;">
+        <div id="shape">
+
+        </div>
+        <div class="container" style="position: relative;">
+            <a class="navbar-brand" href="#">
+                <img src="./images/Oesin_logo.webp" alt="">
+            </a>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
+                type="button"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            ROOMS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">ROOM LIST</a></li>
+                            <li><a class="dropdown-item" href="#">ROOM DETAILS</a></li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            ACTIVITIES
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">LOCATION</a></li>
+                            <li><a class="dropdown-item" href="#">ROOM GRID</a></li>
+                            <li><a class="dropdown-item" href="#">Room DETAILS</a></li>
+                            <li><a class="dropdown-item" href="#">MEGA MENU</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">LOCATION</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">EVENT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TEAM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">LOGIN</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        
+    </nav>
     `
 }
 
