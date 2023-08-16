@@ -1,4 +1,6 @@
 
+
+
 let page=1;
 let detail =[];
 let totalpage;
@@ -61,10 +63,10 @@ sp.addEventListener("change",function(){
 async function sortcart(){
     let res;
     if(sp.value=="Low to High"){
-        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?_sort=price&_order=asc&_page=1&_limit=4`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?_sort=price&_order=asc&_page=1&_limit=5`)
         
     }else if(sp.value=="High to Low"){
-        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?_sort=price&_order=desc&_page=1&_limit=4`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?_sort=price&_order=desc&_page=1&_limit=5`)
     }
     
     
@@ -91,10 +93,10 @@ sv.addEventListener("change",function(){
 async function sortview(){
     let res;
     if(sv.value=="Ocean View"){
-        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?view=Ocean`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?view=Ocean&_page=${page}&_limit=5`)
         console.log(res)
     }else if(sv.value=="City View"){
-        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?view=City`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?view=City&_page=${page}&_limit=5`)
     }
     
     
@@ -121,12 +123,12 @@ fb.addEventListener("change",function(){
 async function filterbed(){
     let res;
     if(fb.value=="Single bed"){
-        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?bed=Single`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?bed=Single&_page=${page}&_limit=5`)
         // console.log(res)
     }else if(fb.value=="Double bed"){
-        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?bed=Double`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?bed=Double&_page=${page}&_limit=5`)
     }else if(fb.value=="King bed"){
-        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?bed=King`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?bed=King&_page=${page}&_limit=5`)
     }
     
     
