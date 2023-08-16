@@ -1,29 +1,59 @@
 
-async function fetching(){
-    
-    
-    let res = await fetch("http://localhost:3000/rooms?_page=1&_limit=4")
-    let result=await res.json();
-    // console.log(result);
-    
+let page=1;
+let detail =[];
+let totalpage;
+
+async function fetching(page){
     try{
-        // console.log(result);
-        appenddata(result);
+    let res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?_page=${page}&_limit=5`)
+    let result=await res.json();
+    // console.log(result)
+    appenddata(result);
+    
         // return result;
     }catch(error){
         return error
     }
     
 }
-fetching();
-// console.log("Moin")
-// console.log(data)
+
+
+//getting total pages
+async function totalPagesAre(){
+    let res= await fetch(`https://drab-belt-newt.cyclic.cloud/rooms`)
+    let result=await res.json()
+    console.log(result.length)
+    totalpage=result.length
+    
+    
+}
+
+fetching(page);
+totalPagesAre();
+console.log(totalpage)
+
+
+let paginationAre=()=>{
+    
+    let all= totalpage/5;  
+    let pagdiv=document.getElementById("pagination")
+    // let body=document.querySelector("body")
+
+    for(let i=1; i<all; i++){
+        let div=document.createElement('div')
+        let btn=document.createElement('button')
+         btn.textContent=i;
+         btn.classList='pageBtn'
+         div.append(btn)
+         pagdiv.append(div)
+
+    }
+}
+paginationAre()
 
 
 
 //Sort by Price
-
-
 let sp=document.getElementById("sortprice")
 sp.addEventListener("change",function(){
     sortcart();
@@ -31,10 +61,10 @@ sp.addEventListener("change",function(){
 async function sortcart(){
     let res;
     if(sp.value=="Low to High"){
-        res = await fetch(`http://localhost:3000/rooms?_sort=price&_order=asc&_page=1&_limit=4`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?_sort=price&_order=asc&_page=1&_limit=4`)
         
     }else if(sp.value=="High to Low"){
-        res = await fetch(`http://localhost:3000/rooms?_sort=price&_order=desc&_page=1&_limit=4`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?_sort=price&_order=desc&_page=1&_limit=4`)
     }
     
     
@@ -61,10 +91,10 @@ sv.addEventListener("change",function(){
 async function sortview(){
     let res;
     if(sv.value=="Ocean View"){
-        res = await fetch(`http://localhost:3000/rooms?view=Ocean`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?view=Ocean`)
         console.log(res)
     }else if(sv.value=="City View"){
-        res = await fetch(`http://localhost:3000/rooms?view=City`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?view=City`)
     }
     
     
@@ -91,12 +121,12 @@ fb.addEventListener("change",function(){
 async function filterbed(){
     let res;
     if(fb.value=="Single bed"){
-        res = await fetch(`http://localhost:3000/rooms?bed=Single`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?bed=Single`)
         // console.log(res)
     }else if(fb.value=="Double bed"){
-        res = await fetch(`http://localhost:3000/rooms?bed=Double`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?bed=Double`)
     }else if(fb.value=="King bed"){
-        res = await fetch(`http://localhost:3000/rooms?bed=King`)
+        res = await fetch(`https://drab-belt-newt.cyclic.cloud/rooms?bed=King`)
     }
     
     
@@ -131,8 +161,12 @@ function appenddata(data){
         let room=document.createElement("div")
         room.setAttribute("id","room");
 
-        // rooma.innerHTML=room;
-        // rooma.append(room);
+        room.addEventListener("click",()=>{
+           productData(e);
+        })
+
+       
+        
 
         let roomimg=document.createElement("div")
         roomimg.setAttribute("id","roomimg");
@@ -238,26 +272,14 @@ function appenddata(data){
 
     })
 
-    let rooma=document.querySelectorAll("#room")
-    for(let i of rooma){
-
-        i.addEventListener("click",function(){
-                // console.log("Moin")
-            location.href="../html/Roomdetails.html"
-        })
-
-    }
-
-    
-
-    // let pagecartnumbers=data.length;
-
-    // let no_of_pages= Math.ceil(pagecartnumbers/5);
-
-    // for(let i=1;i<=no_of_pages;i++){
-    //     let pageno=document.createElement("a")
-    //     pageno.s
-    // }
-
 }
+
+let productData=(data)=>{
+    console.log(data)
+    detail.push(data)
+    localStorage.setItem('prodData', JSON.stringify(data))
+    window.location.href="../html/Roomdetails.html"
+}
+
+
 

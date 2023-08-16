@@ -123,8 +123,8 @@ margin: auto ;
 
 /* #detailbutt{
     /* border-radius: 1px solid black; */
-    background-color:#b5876d;
-} */
+    
+/* } */
 
 @media only screen and (min-width: 481px) and (max-width: 1000px) {
  #roomimg{
