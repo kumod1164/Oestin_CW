@@ -12,6 +12,7 @@ Tech Stack Used :-
 3. #RazorPay for payment
 4. #Netlify for Deploying the whole project
 
+Deployed Link : https://64dcecef4c77132933378ad2--silver-piroshki-29b668.netlify.app/index.html
 
 Project Contributors :-
 1. Kumod Kumar Sharma (Team Lead, Contact_Us Page)
